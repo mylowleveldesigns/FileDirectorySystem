@@ -23,6 +23,7 @@ public class Cd implements Command {
             }
             state.setWd(currentDirectory.getParentDirectory());
             state.setOutput("SUCC: REACHED");
+            return;
         }
         for(DirEntry cDir: contents){
             if(cDir.isDirectory() && cDir.getName().equals(args)){
@@ -33,6 +34,4 @@ public class Cd implements Command {
         }
         state.setOutput("ERR: NO SUCH DIRECTORY");
     }
-
-
 }
